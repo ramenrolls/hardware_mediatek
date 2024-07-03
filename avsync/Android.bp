@@ -1,0 +1,25 @@
+cc_library_shared {
+    name: "libvt_avsync",
+
+    include_dirs: [
+        "vendor/mediatek/ims/avsync/include",
+        "frameworks/av/media/libstagefright/foundation/include",
+    ],
+
+    cflags: [
+        "-D__PRODUCTION_RELEASE__",
+        "-Werror",
+        "-Wswitch",
+    ],
+
+    srcs: ["src/VTAVSync.cpp"],
+
+    shared_libs: [
+        "libbinder",
+        "libutils",
+        "libcutils",
+        "liblog",
+    ],
+
+    export_include_dirs: ["include"],
+}

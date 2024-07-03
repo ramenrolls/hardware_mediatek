@@ -1,0 +1,49 @@
+cc_library_shared {
+    name: "libimsma",
+
+    srcs: [
+        "ImsMediaReceiver.cpp",
+        "ImsMediaSender.cpp",
+        "ImsMa.cpp",
+        "ImsMaDebugUtil.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/native/include/media/hardware",
+        "frameworks/native/include/gui",
+        "frameworks/av/media/libstagefright",
+        "frameworks/av/media",
+        "frameworks/av/media/libmediametrics/include",
+        "vendor/mediatek/ims/sink",
+        "vendor/mediatek/ims/source",
+        "vendor/mediatek/ims/comutils",
+        "vendor/mediatek/ims/rtp/include",
+        "vendor/mediatek/ims/signal",
+        "system/netd/include",
+    ],
+
+    shared_libs: [
+        "libbinder",
+        "libcutils",
+        "libgui",
+        "libmedia",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libui",
+        "libutils",
+        "libsink",
+        "libsource",
+        "libvcodec_cap",
+        "libimsma_rtp",
+        "libcomutils",
+        "liblog",
+        "libsignal",
+        "libnetd_client",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wno-error=deprecated-declarations",
+        "-Wall",
+    ],
+}

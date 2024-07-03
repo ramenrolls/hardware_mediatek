@@ -1,0 +1,25 @@
+cc_prebuilt_library_shared {
+    name: "libmtk_drvb",
+    vendor: true,
+    compile_multilib: "both",
+
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "libm",
+        "liblog",
+        "libdl",
+        "libc",
+        "libc++",
+    ],
+
+    arch: {
+        arm: {
+            srcs: ["arm/libmtk_drvb.so"],
+        },
+
+        arm64: {
+            srcs: ["arm64/libmtk_drvb.so"],
+        },
+    },
+}

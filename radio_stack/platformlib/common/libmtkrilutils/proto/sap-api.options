@@ -1,0 +1,7 @@
+MsgHeader.payload                 type:FT_POINTER
+RIL_SIM_SAP_APDU_REQ.command      type:FT_POINTER
+RIL_SIM_SAP_APDU_RSP.apduResponse type:FT_POINTER
+RIL_SIM_SAP_TRANSFER_ATR_RSP.atr  type:FT_POINTER
+
+#RIL_SIM_SAP_REQUEST.apdu type:FT_POINTER
+#RIL_SIM_SAP_RESPONSE.apdu type:FT_POINTER

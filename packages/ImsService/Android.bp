@@ -1,0 +1,17 @@
+android_app_import {
+	name: "ImsService",
+	owner: "ZIDAN44",
+	apk: "ImsService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	required: ["com.mediatek.ims.xml"],
+}
+
+prebuilt_etc {
+	name: "com.mediatek.ims.xml",
+	src: "com.mediatek.ims.xml",
+	sub_dir: "permissions",
+}

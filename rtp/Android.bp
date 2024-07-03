@@ -1,0 +1,37 @@
+cc_library_shared {
+    name: "libimsma_rtp",
+
+    srcs: [
+        "src/IRTPController.cpp",
+        "src/RTPController.cpp",
+        "src/RTPSender.cpp",
+        "src/RTPReceiver.cpp",
+        "src/RTPSource.cpp",
+        "src/AVCAssembler.cpp",
+        "src/RTPAssembler.cpp",
+        "src/HEVCAssembler.cpp",
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/ims/rtp/include",
+        "vendor/mediatek/ims/socketwrapper",
+        "vendor/mediatek/ims/signal",
+        "frameworks/av/media/libstagefright",
+    ],
+
+    cflags: ["-Werror"],
+
+    shared_libs: [
+        "libbinder",
+        "libmedia",
+        "libutils",
+        "libcutils",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libimsma_socketwrapper",
+        "libvcodec_cap",
+        "libimsma_adapt",
+        "liblog",
+        "libsignal",
+    ],
+}

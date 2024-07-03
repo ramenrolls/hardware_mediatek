@@ -1,0 +1,48 @@
+cc_library_shared {
+    name: "libsink",
+
+    srcs: [
+        "Sink.cpp",
+        "Recorder.cpp",
+        "Renderer.cpp",
+        "EncoderContext.cpp",
+        "MediaAdapter.cpp",
+        "MediaMuxer.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright",
+        "frameworks/av/media",
+        "frameworks/av/include",
+        "frameworks/av/media/libmediametrics/include",
+        "frameworks/av/media/libstagefright/include",
+        "frameworks/av/drm/libmediadrm/interface",
+        "vendor/mediatek/ims/include/media/openmax",
+        "frameworks/native/include/media/openmax",
+        "vendor/mediatek/ims/comutils",
+    ],
+
+    shared_libs: [
+        "libbinder",
+        "libcutils",
+        "libgui",
+        "libmedia",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libui",
+        "libutils",
+        "libcomutils",
+        "libvcodec_cap",
+        "libvt_avsync",
+        "liblog",
+        "libmedia",
+        "libmedia_omx",
+        "libaudioclient",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wno-error=deprecated-declarations",
+        "-Wall",
+    ],
+}

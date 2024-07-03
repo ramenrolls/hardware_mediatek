@@ -1,0 +1,13 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(LOCAL_PATH)/Makefile.inc
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcares_naptr
+LOCAL_CFLAGS += -DHAVE_CONFIG_H
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+LOCAL_SRC_FILES := $(CSOURCES)
+LOCAL_SHARED_LIBRARIES += libc liblog libcutils
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_OWNER := mtk
+include $(BUILD_SHARED_LIBRARY)

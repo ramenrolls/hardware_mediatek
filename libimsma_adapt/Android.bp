@@ -1,0 +1,20 @@
+cc_prebuilt_library_shared {
+    name: "libimsma_adapt",
+    compile_multilib: "both",
+
+    shared_libs: [
+        "liblog",
+        "libdl",
+    ],
+
+    export_include_dirs: ["include"],
+
+    multilib: {
+        lib32: {
+            srcs: ["arm_armv8-a_cortex-a53/libimsma_adapt.so"],
+        },
+        lib64: {
+            srcs: ["arm64_armv8-a_cortex-a53/libimsma_adapt.so"],
+        },
+    },
+}

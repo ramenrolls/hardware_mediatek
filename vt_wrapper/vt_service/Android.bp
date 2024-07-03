@@ -1,0 +1,66 @@
+cc_library_shared {
+    name: "libmtk_vt_service",
+    compile_multilib: "first",
+
+    host_ldlibs: ["-llog"],
+
+    include_dirs: [
+        "frameworks/av/media/libmediametrics/include",
+        "frameworks/native/include/gui",
+        "frameworks/native/include",
+        "frameworks/av/include/media",
+        "vendor/mediatek/ims/avsync/include",
+        "vendor/mediatek/ims/include/volte_header/volte_imcb/sap",
+        "vendor/mediatek/ims/vt_hal/inc",
+        "vendor/mediatek/ims/imsma",
+        "frameworks/native/include/binder",
+        "vendor/mediatek/ims/source",
+        "vendor/mediatek/ims/sink",
+        "vendor/mediatek/ims/rtp/include",
+        "vendor/mediatek/ims/include/ril/include",
+    ],
+
+    local_include_dirs: ["inc"],
+
+    srcs: [
+        "src/IVTClient.cpp",
+        "src/IVTService.cpp",
+        "src/VTMALStub.cpp",
+        "src/VTCore.cpp",
+        "src/VTCoreHelper.cpp",
+        "src/VTService.cpp",
+        "src/VTMsgDispatcher.cpp",
+    ],
+
+    shared_libs: [
+        "libc",
+        "libandroid_runtime",
+        "libbinder",
+        "libutils",
+        "libcutils",
+        "libnativehelper",
+        "libui",
+        "libgui",
+        "libmedia",
+        "libbase",
+        "libfmq",
+        "vendor.mediatek.hardware.videotelephony@1.0",
+        "libhidlbase",
+        "libhidltransport",
+        "libimsma",
+        "libsource",
+        "libimsma_rtp",
+        "libvt_avsync",
+        "libstagefright_foundation",
+        "libvcodec_cap",
+        "liblog",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+
+    header_libs: [
+        "libmediametrics_headers",
+    ],
+}

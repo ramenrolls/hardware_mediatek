@@ -1,0 +1,25 @@
+cc_binary {
+    name: "vtservice_hidl",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["init.vtservice_hidl.rc"],
+    compile_multilib: "first",
+
+    srcs: ["src/main_vtservice_hidl.cpp"],
+
+    include_dirs: ["vendor/mediatek/ims/vt_hal/inc"],
+    local_include_dirs: ["inc"],
+
+    header_libs: ["libbinder_headers"],
+
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "liblog",
+        "libbase",
+        "libfmq",
+        "vendor.mediatek.hardware.videotelephony@1.0",
+        "libhardware",
+        "libhidlbase",
+    ],
+}

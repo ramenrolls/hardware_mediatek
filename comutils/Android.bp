@@ -1,0 +1,33 @@
+cc_library_shared {
+    name: "libcomutils",
+
+    include_dirs: [
+        "vendor/mediatek/ims/include/media/openmax",
+        "vendor/mediatek/ims/include/dpframework",
+        "frameworks/native/include/media/openmax",
+        "frameworks/av/media/libstagefright",
+    ],
+
+    srcs: ["comutils.cpp"],
+
+    cflags: [
+        "-Werror",
+        "-Wno-error=deprecated-declarations",
+        "-Wall",
+    ],
+
+    cppflags: ["-DUSING_MDP_BY_HIDL"],
+
+    shared_libs: [
+        "libcutils",
+        "libstagefright_foundation",
+        "libutils",
+        "libstagefright",
+        "libmedia",
+        "liblog",
+        "libhidlbase",
+        "libion",
+        "vendor.mediatek.hardware.mms@1.0",
+        "vendor.mediatek.hardware.mms@1.1",
+    ],
+}

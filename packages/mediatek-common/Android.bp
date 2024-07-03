@@ -1,0 +1,5 @@
+dex_import {
+	name: "mediatek-common",
+	owner: "ZIDAN44",
+	jars: ["mediatek-common.jar"],
+}

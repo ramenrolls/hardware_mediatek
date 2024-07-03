@@ -1,0 +1,29 @@
+cc_library_shared {
+    name: "libvcodec_cap",
+
+    srcs: [
+        "src/VcodecCap.cpp",
+        "src/VcodecCap_h264mp.cpp",
+        "src/VcodecCap_hevcmp.cpp",
+        "src/VcodecCap_utility.cpp",
+        "src/VcodecCap_inst.cpp",
+    ],
+
+    include_dirs: ["vendor/mediatek/ims/vcodeccap/include"],
+
+    export_include_dirs: ["include"],
+
+    shared_libs: [
+        "libui",
+        "libcutils",
+        "libutils",
+        "libbinder",
+        "libexpat",
+        "liblog",
+        "libvcodec_capenc",
+        "libstagefright_omx_utils",
+        "libstagefright_foundation",
+        "libion",
+        "android.hardware.graphics.bufferqueue@2.0",
+    ],
+}

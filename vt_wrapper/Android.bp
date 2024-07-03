@@ -1,0 +1,50 @@
+cc_library_shared {
+    name: "libmtk_vt_wrapper",
+
+    host_ldlibs: ["-llog"],
+
+    include_dirs: [
+        "vendor/mediatek/ims/vt_wrapper/vt_service/inc",
+        "frameworks/av/media/libmediametrics/include",
+        "frameworks/native/include/gui",
+        "frameworks/native/include",
+        "frameworks/av/include/media",
+        "vendor/mediatek/ims/avsync/include",
+        "vendor/mediatek/ims/include/volte_header/volte_imcb/sap",
+        "vendor/mediatek/ims/vt_hal/inc",
+        "vendor/mediatek/ims/imsma",
+        "frameworks/native/include/binder",
+        "vendor/mediatek/ims/source",
+        "vendor/mediatek/ims/sink",
+        "vendor/mediatek/ims/rtp/include",
+        "vendor/mediatek/ims/include/ril/include",
+    ],
+
+    srcs: [
+        "vt_service/src/IVTClient.cpp",
+        "vt_service/src/IVTService.cpp",
+        "vt_service/src/VTClient.cpp",
+        "src/VTel_jni.cpp",
+    ],
+
+    shared_libs: [
+        "libandroid_runtime",
+        "libbinder",
+        "libutils",
+        "libcutils",
+        "libnativehelper",
+        "libfmq",
+        "vendor.mediatek.hardware.videotelephony@1.0",
+        "libhidlbase",
+        "libhidltransport",
+        "libui",
+        "libgui",
+        "libmedia",
+        "libvcodec_cap",
+        "liblog",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+}

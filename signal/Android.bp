@@ -1,0 +1,24 @@
+cc_library_shared {
+    name: "libsignal",
+
+    srcs: ["ImsSignal.cpp"],
+
+    include_dirs: [
+        "vendor/mediatek/ims/signal",
+        "frameworks/av/media/libstagefright",
+        "system/core/include/utils",
+    ],
+
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "libstagefright_foundation",
+        "liblog",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wno-error=deprecated-declarations",
+        "-Wall",
+    ],
+}

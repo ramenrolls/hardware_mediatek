@@ -1,0 +1,26 @@
+cc_prebuilt_library_shared {
+    name: "libmtkshifter_vendor",
+    vendor: true,
+    compile_multilib: "both",
+
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libmtk_drvb",
+        "libutils",
+        "libm",
+        "libc++",
+        "libc",
+        "libdl",
+    ],
+
+    arch: {
+        arm: {
+            srcs: ["libmtkshifter_vendor.so"],
+        },
+
+        arm64: {
+            srcs: ["lib64mtkshifter_vendor.so"],
+        },
+    },
+}

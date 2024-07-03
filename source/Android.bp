@@ -1,0 +1,46 @@
+cc_library_shared {
+    name: "libsource",
+
+    srcs: [
+        "Source.cpp",
+        "EncoderSource.cpp",
+        "VTCameraSource.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/native/include/media/openmax",
+        "frameworks/native/include/media/hardware",
+        "frameworks/av/media/libstagefright",
+        "frameworks/av/media",
+        "frameworks/av/include",
+        "frameworks/av/drm/libmediadrm/interface",
+        "frameworks/av/media/libmediametrics/include",
+        "system/core/include/utils",
+        "vendor/mediatek/ims/comutils",
+        "vendor/mediatek/ims/signal",
+    ],
+
+    shared_libs: [
+        "libbinder",
+        "libcutils",
+        "libgui",
+        "libmedia",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libmedia_omx",
+        "libui",
+        "libutils",
+        "libcamera_client",
+        "libcomutils",
+        "libvcodec_cap",
+        "liblog",
+        "libsignal",
+        "libhardware",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wno-error=deprecated-declarations",
+        "-Wall",
+    ],
+}

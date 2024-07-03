@@ -1,0 +1,24 @@
+cc_library_shared {
+    name: "libimsma_socketwrapper",
+
+    srcs: ["SocketWrapper.cpp"],
+
+    include_dirs: [
+        "vendor/mediatek/ims/imsma",
+        "frameworks/av/media/libstagefright",
+        "system/netd/include",
+    ],
+
+    cflags: ["-Werror"],
+
+    shared_libs: [
+        "libbinder",
+        "libmedia",
+        "libutils",
+        "libcutils",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libnetd_client",
+        "liblog",
+    ],
+}
